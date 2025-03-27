@@ -1,0 +1,190 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Villas {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  member Json @db.Json
+  owner Json @db.Json
+  regions Json @db.Json
+  regions_up Json @db.Json
+  categorys Json @db.Json
+  distances Json @db.Json
+  prices Json @db.Json
+  features Json @db.Json
+  comments Json @db.Json
+  availability Json @db.Json
+  reservation Json @db.Json
+  agency Json @db.Json
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  show_status Int @default(0)
+  @@map("villas")
+}
+model Regions {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  member Json @db.Json
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  show_status Int @default(1)
+  @@map("regions")
+}
+model Categorys {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  member Json @db.Json
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  show_status Int @default(1)
+  @@map("categorys")
+}
+model Blogs {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  member Json @db.Json
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  show_status Int @default(1)
+  @@map("blogs")
+}
+model Settings {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  member Json @db.Json
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  @@map("settings")
+}
+model Agencys {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  member Json @db.Json
+  bank Json @db.Json
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  show_status Int @default(1)
+  @@map("agencys")
+}
+model Banks {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  member Json @db.Json
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  @@map("banks")
+}
+model Availabilitys {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  member Json @db.Json
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  @@map("availabilitys")
+}
+model Reservations {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  member Json @db.Json
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  @@map("reservations")
+}
+model Members {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  member Json @db.Json
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  show_status Int @default(1)
+  @@map("members")
+}
+model Prices {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  @@map("prices")
+}
+model Distances {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  show_status Int @default(1)
+  @@map("distances")
+}
+model Features {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  member Json @db.Json
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  show_status Int @default(1)
+  @@map("features")
+}
+model Comments {
+  id Int @id @default(autoincrement())
+  json Json? @db.Json
+  add_date String? @db.VarChar(255)
+  add_member Int @default(0)
+  member Json @db.Json
+  order Int? @default(0)
+  company_slug String? @db.VarChar(255)
+  status Int @default(1)
+  show_status Int @default(1)
+  @@map("comments")
+}
